@@ -1,0 +1,26 @@
+.userList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .userListItem {
+        border-bottom: 1px solid #ccc;
+        padding: 10px;
+        .userListItemInfo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+          
+        .userListItemInfoToggle{
+            background: none;
+            border: none;
+            color: blue;
+            cursor: pointer;
+        }
+          
+        .userListItemInfoDetails {
+            margin-top: 5px;
+            color: #555;
+        }  
+    }
+}
