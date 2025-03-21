@@ -24,11 +24,8 @@ function getQueryClient() {
 }
 
 export function useQueryClient() {
-  if (typeof window === 'undefined') {
-    return getQueryClient();
-  } else {
-    return useReactQueryClient();
-  }
+  const client = useReactQueryClient();
+  return client;
 }
 
 

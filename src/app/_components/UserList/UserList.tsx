@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import style from "./style.module.scss"
-import { getUser } from "@/app/quires/getUser";
+import { useGetUser } from "@/app/quires/getUser";
 
 interface User {
     id: number;
@@ -10,12 +10,12 @@ interface User {
 }
 
 export const UserList = () => {
-    const { data: users } = getUser();
+    const { data: users } = useGetUser();
     const [expanded, setExpanded] = useState<number | null>(null);
 
     return (
         <div className={style.userList}>
-            {[...users, ...users]?.map((user: User) => (
+            {users?.map((user: User) => (
                 <div key={user.id} className={style.userListItem}>
                     <div className={style.userListItemInfo}>
                         <p>{user.name}</p>
